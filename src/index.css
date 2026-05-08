@@ -1,0 +1,172 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+/* reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+li { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+/* styles */
+:root {
+  --primary-color: #3e6ae1;
+  --white-color: #fff;
+  --black-color: #111;
+  --type-title: 40px;
+  --type-base: 16px;
+}
+html { scroll-behavior: smooth; }
+body {
+  width: 100%;
+  min-width: 320px;
+  font-family: "Nanum Gothic", sans-serif;
+  color: var(--black-color);
+  overflow-x: hidden;
+}
+
+.nanum-gothic-regular { font-weight: 400; font-size: 16px; }
+.nanum-gothic-bold { font-weight: 700; font-size: clamp(20px, 5vw, 45px); }
+.nanum-gothic-extrabold { font-weight: 800; font-size: clamp(24px, 5vw, 60px); }
+
+/* Buttons */
+.btn-wrap {
+  display: flex; gap: 8px; padding: 16px;
+}
+.btn-wrap button {
+  cursor: pointer; flex: 1; padding: 12px 0; border: none; border-radius: 4px; font-weight: 600;
+  transition: all 0.3s;
+}
+.btn-wrap button:hover { filter: brightness(80%); }
+.btn-blue { background-color: var(--primary-color); color: var(--white-color); }
+.btn-white { background-color: var(--white-color); color: var(--black-color); border: 1px solid var(--black-color); }
+.btn-black { background-color: var(--black-color); color: var(--white-color); }
+
+/* Header */
+header {
+  background-image: url("./assets/assets/images/01.jpg");
+  background-size: cover; background-position: center;
+  color: var(--white-color);
+  height: 100vh;
+  min-height: 580px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding-bottom: 32px;
+}
+header nav {
+  display: flex; justify-content: space-between; align-items: center; padding: 24px 32px;
+  position: relative; z-index: 10;
+}
+header .logo { letter-spacing: 16px; font-size: 24px; padding-left: 16px; }
+header .menu-icon { padding: 8px 16px; background-color: rgba(0, 0, 0, 0.3); border-radius: 4px; cursor: pointer; }
+.desktop-menu { display: none; }
+header .hero-content { text-align: center; margin-top: auto; }
+header .hero-content h2 { margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+
+/* Indicators */
+.indicator { display: flex; justify-content: center; gap: 8px; padding-bottom: 16px; }
+.indicator > div { width: 12px; height: 12px; border-radius: 50%; background-color: #8B8C8F; cursor: pointer; }
+.indicator > .active { background-color: #171A20; }
+
+/* Section 1 */
+#sec01 { padding: 32px 0; }
+.sec01-cardlist {
+  display: flex; gap: 16px; padding: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+}
+.sec01-cardlist::-webkit-scrollbar { display: none; }
+.sec01-card {
+  flex: 0 0 calc(80% - 16px); min-width: 285px; aspect-ratio: 3/4;
+  display: flex; flex-direction: column; justify-content: space-between; padding: 24px;
+  color: var(--white-color); border-radius: 12px; scroll-snap-align: center;
+}
+.sec01-card.item01 { background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('./assets/assets/images/02.jpg') center/cover; }
+.sec01-card.item02 { background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('./assets/assets/images/03.jpg') center/cover; }
+.sec01-card h3 { font-size: 20px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+.bottom-text h2 { margin-bottom: 16px; }
+.bottom-text .btn-wrap { padding: 0; flex-direction: column; gap: 8px; }
+
+/* Section 2 */
+#sec02 { padding: 32px 16px; }
+.sec02-card { border-radius: 16px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.sec02-img { height: 220px; background-size: cover; background-position: center; }
+.item01 .sec02-img { background-image: url('./assets/assets/images/05.jpg'); }
+.item02 .sec02-img { background-image: url('./assets/assets/images/06.jpg'); }
+.sec02-txt { background-color: #f4f4f4; padding: 24px; display: flex; flex-direction: column; gap: 12px;}
+.sec02-txt p { color: #5c5e62; }
+.sec02-txt .btn-wrap { padding: 0; width: 100%; margin-top: 8px;}
+
+/* Section 3 */
+#sec03 { padding: 16px; position: relative; height: 60vh; min-height: 400px; display: flex; align-items: flex-end; }
+#sec03 video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 16px; z-index: -1;}
+.sec03-txt { padding: 24px; width: 100%; color: var(--white-color); background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); border-radius: 0 0 16px 16px; }
+.sec03-txt h2 { margin-bottom: 16px; }
+.sec03-txt .btn-wrap { padding: 0; width: 100%; max-width: 300px; }
+
+/* Section 4 */
+#sec04 { display: flex; flex-direction: column; }
+.sec04-img { height: 300px; background-image: url('./assets/assets/images/map.jpg'); background-position: center; }
+.sec04-txt { padding: 32px 16px; background: #fff; }
+.sec04-txt-1 { margin-bottom: 24px; }
+.sec04-txt-1 h2 { font-size: 28px; margin-bottom: 8px; font-weight: 800;}
+.sec04-txt-1 p { color: #5c5e62; line-height: 1.5; }
+.stats { display: flex; gap: 32px; margin-bottom: 24px; }
+.stat-item { display: flex; align-items: baseline; gap: 8px; }
+.stat-item h2 { font-size: 32px; font-weight: 800;}
+.stat-item img { width: 24px; height: 24px; }
+.sec04-txt .btn-wrap { padding: 0; flex-direction: column; gap: 12px; }
+
+/* Section 5 */
+#sec05 { padding: 32px 0; background: #f4f4f4; }
+.sec05-cardlist { display: flex; gap: 16px; padding: 16px; overflow-x: auto; scroll-snap-type: x mandatory; }
+.sec05-cardlist::-webkit-scrollbar { display: none; }
+.sec05-card { flex: 0 0 calc(80% - 16px); min-width: 285px; aspect-ratio: 3/4; border-radius: 12px; position: relative; overflow: hidden; scroll-snap-align: center; }
+.sec05-card.item01 { background: url('./assets/assets/images/06.jpg') center/cover; }
+.sec05-card.item02 { background: url('./assets/assets/images/07.jpg') center/cover; }
+.sec05-card-txt { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: #fff;}
+.sec05-card-txt h2 { margin-bottom: 8px; }
+.sec05-card-txt p { margin-bottom: 16px; font-size: 14px; opacity: 0.9;}
+.sec05-card-txt .btn-wrap { padding: 0; }
+
+/* Footer */
+footer { padding: 48px 16px; background: #fff; text-align: center; color: #5c5e62; font-size: 14px; }
+footer ul { display: flex; flex-direction: column; gap: 16px; }
+footer li { cursor: pointer; transition: color 0.2s;}
+footer li:hover { color: #111; }
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  /* Header adjustments for desktop */
+  header nav { padding: 24px 48px; }
+  .menu-icon { display: none; }
+  .desktop-menu { display: flex; gap: 32px; font-weight: 700; align-items: center; }
+  .desktop-menu li { cursor: pointer; text-shadow: 0 1px 3px rgba(0,0,0,0.5); transition: opacity 0.3s;}
+  .desktop-menu li:hover { opacity: 0.8; }
+  header .hero-content h2 { font-size: 56px; }
+  header .btn-wrap { flex-direction: row; justify-content: center; max-width: 600px; margin: 0 auto; }
+
+  /* Buttons */
+  .btn-wrap button { padding: 12px 32px; font-size: 16px; }
+  
+  /* Sections */
+  #sec01 { padding: 64px 32px; max-width: 1200px; margin: 0 auto; }
+  .sec01-cardlist { gap: 32px; }
+  .sec01-card { flex: 1; aspect-ratio: 4/3; }
+  .bottom-text .btn-wrap { flex-direction: row; }
+
+  #sec02 { padding: 64px 32px; max-width: 1200px; margin: 0 auto; display: flex; gap: 32px; }
+  .sec02-card { flex: 1; display: flex; flex-direction: column; margin: 0;}
+  .sec02-img { flex: 1; min-height: 300px; }
+  .sec02-txt .btn-wrap { max-width: 200px; }
+
+  #sec03 { height: 80vh; max-height: 800px; padding: 32px; }
+  .sec03-txt { background: none; text-shadow: 0 2px 8px rgba(0,0,0,0.8); left: 48px; bottom: 64px; }
+  
+  #sec04 { flex-direction: row; max-width: 1200px; margin: 0 auto; align-items: center; padding: 64px 32px; gap: 64px;}
+  .sec04-img { flex: 1; height: 500px; border-radius: 16px; }
+  .sec04-txt { flex: 1; padding: 0; }
+  .sec04-txt .btn-wrap { flex-direction: row; }
+
+  #sec05 { padding: 64px 32px; }
+  #sec05 > div { max-width: 1200px; margin: 0 auto; }
+  .sec05-cardlist { justify-content: center; gap: 32px; }
+  .sec05-card { flex: 1; max-width: 500px; aspect-ratio: 4/3; }
+  
+  footer ul { flex-direction: row; justify-content: center; gap: 24px; }
+}
